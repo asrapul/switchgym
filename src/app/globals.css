@@ -1,26 +1,371 @@
 @import "tailwindcss";
 
+/* ============================================
+   AsrapGym Design System - Red & Black Theme
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --primary-red: #DC2626;
+  --primary-red-hover: #B91C1C;
+  --primary-red-light: #FEE2E2;
+  --primary-dark-red: #991B1B;
+  
+  /* Neutral Colors */
+  --black: #0A0A0A;
+  --dark-gray: #1A1A1A;
+  --gray: #2D2D2D;
+  --light-gray: #404040;
+  --text-muted: #A3A3A3;
+  --text-light: #FAFAFA;
+  --white: #FFFFFF;
+  
+  /* Background */
+  --background: var(--black);
+  --foreground: var(--text-light);
+  --card-bg: var(--dark-gray);
+  --card-border: var(--gray);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary-red);
+  --color-primary-hover: var(--primary-red-hover);
+  --color-card: var(--card-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base Styles */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   Loading Screen Animations
+   ============================================ */
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes loading-bar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1.5s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-out {
+  animation: fade-out 0.5s ease-out forwards;
+}
+
+.animate-loading-bar {
+  animation: loading-bar 2s ease-out forwards;
+}
+
+/* ============================================
+   Custom Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-red);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-red-hover);
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-red), #EF4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-red {
+  background: linear-gradient(135deg, var(--primary-red), var(--primary-dark-red));
+}
+
+.glass-effect {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(220, 38, 38, 0.2);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================
+   Light Theme Styles
+   ============================================ */
+
+:root.light,
+html.light {
+  --background: #F5F5F5;
+  --foreground: #1A1A1A;
+  --dark-gray: #FFFFFF;
+  --gray: #E5E5E5;
+  --light-gray: #D4D4D4;
+  --text-muted: #737373;
+  --text-light: #1A1A1A;
+  --card-bg: #FFFFFF;
+  --card-border: #E5E5E5;
+}
+
+html.light body {
+  background: #F5F5F5;
+  color: #1A1A1A;
+}
+
+html.light .glass-effect {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Light theme - Background colors */
+html.light .bg-\[\#0A0A0A\] {
+  background-color: #F5F5F5 !important;
+}
+
+html.light .bg-\[\#1A1A1A\] {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-\[\#2D2D2D\] {
+  background-color: #E5E5E5 !important;
+}
+
+html.light .bg-\[\#404040\] {
+  background-color: #D4D4D4 !important;
+}
+
+/* Light theme - Border colors */
+html.light .border-\[\#2D2D2D\] {
+  border-color: #E5E5E5 !important;
+}
+
+html.light .border-\[\#404040\] {
+  border-color: #D4D4D4 !important;
+}
+
+/* Light theme - Text colors */
+html.light .text-\[\#FAFAFA\] {
+  color: #1A1A1A !important;
+}
+
+html.light .text-\[\#A3A3A3\] {
+  color: #737373 !important;
+}
+
+html.light .text-white {
+  color: #1A1A1A !important;
+}
+
+/* Light theme - Form elements */
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #FFFFFF !important;
+  border-color: #E5E5E5 !important;
+  color: #1A1A1A !important;
+}
+
+html.light input::placeholder {
+  color: #A3A3A3 !important;
+}
+
+/* Light theme - Cards and modals */
+html.light .card-hover:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Light theme - Navigation and buttons */
+html.light nav.fixed {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+html.light .text-\[\#DC2626\] {
+  color: #DC2626 !important;
+}
+
+/* Light theme - Keep colored buttons visible */
+html.light button[class*="bg-[#DC2626]"],
+html.light button[class*="bg-[#3B82F6]"],
+html.light button[class*="bg-[#10B981]"],
+html.light button[class*="bg-gradient"] {
+  color: white !important;
+}
+
+/* Light theme - SVGs in navigation should stay colored */
+html.light nav svg {
+  /* Keep SVG icon colors as they are */
+}
+
+/* Light theme - Stats cards */
+html.light .text-\[\#10B981\] {
+  color: #10B981 !important;
+}
+
+html.light .text-\[\#F59E0B\] {
+  color: #F59E0B !important;
+}
+
+html.light .text-\[\#EF4444\] {
+  color: #EF4444 !important;
+}
+
+html.light .text-\[\#3B82F6\] {
+  color: #3B82F6 !important;
+}
+
+/* Light theme - Badge difficulty colors */
+html.light .text-\[\#FFD700\] {
+  color: #B8860B !important; /* Darker gold for visibility */
+}
+
+/* Light theme - Monthly stats color overrides */
+html.light .text-2xl,
+html.light .text-3xl {
+  color: inherit;
+}
+
+/* Keep colored elements visible in light mode */
+html.light .bg-gradient-to-r,
+html.light .bg-gradient-to-br,
+html.light [style*="background-color"] {
+  /* Don't override inline colored backgrounds */
+}
+
+/* Water glass animation */
+@keyframes fill-water {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.animate-fill-water {
+  animation: fill-water 0.3s ease-out forwards;
+}
+
+/* Badge unlock animation */
+@keyframes badge-unlock {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-badge-unlock {
+  animation: badge-unlock 0.5s ease-out forwards;
+}
+
+/* Countdown pulse */
+@keyframes countdown-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-countdown-pulse {
+  animation: countdown-pulse 1s ease-in-out infinite;
 }

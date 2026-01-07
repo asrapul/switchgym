@@ -1,0 +1,202 @@
+
+D:\Coding\asrapgabut\asrapgym\src\app\measurements\page.tsx
+  29:5  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Coding\asrapgabut\asrapgym\src\app\measurements\page.tsx:29:5
+  27 |
+  28 |   useEffect(() => {
+> 29 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  30 |     setMeasurements(getBodyMeasurements());
+  31 |   }, []);
+  32 |  react-hooks/set-state-in-effect
+  57:9  warning  'getLatestValue' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+
+D:\Coding\asrapgabut\asrapgym\src\app\page.tsx
+    5:156  warning  'Badge' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+   15:3    warning  'HomeIcon' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+   16:3    warning  'CalendarIcon' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+   18:3    warning  'UserIcon' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+   21:3    warning  'TargetIcon' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+   59:5    error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Coding\asrapgabut\asrapgym\src\app\page.tsx:59:5
+  57 |
+  58 |     // Load data
+> 59 |     setStats(getMonthlyStats());
+     |     ^^^^^^^^ Avoid calling setState() directly within an effect
+  60 |     setQuests(getQuests());
+  61 |     setQuote(getHourlyQuote());
+  62 |     setSelectedMode(getSelectedTrainingMode());  react-hooks/set-state-in-effect
+   79:6    warning  React Hook useEffect has a missing dependency: 'showNotification'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-hooks/exhaustive-deps
+   81:9    warning  'activeQuests' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+  165:17   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react/no-unescaped-entities
+  165:30   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react/no-unescaped-entities
+
+D:\Coding\asrapgabut\asrapgym\src\app\pr\page.tsx
+  36:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Coding\asrapgabut\asrapgym\src\app\pr\page.tsx:36:5
+  34 |
+  35 |   useEffect(() => {
+> 36 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  37 |     setRecords(getPersonalRecords());
+  38 |   }, []);
+  39 |  react-hooks/set-state-in-effect
+
+D:\Coding\asrapgabut\asrapgym\src\app\progress\page.tsx
+   28:3   warning  'NotepadIcon' is defined but never used                          @typescript-eslint/no-unused-vars
+   29:3   warning  'SparklesIcon' is defined but never used                         @typescript-eslint/no-unused-vars
+  111:9   warning  'unlockedBadges' is assigned a value but never used              @typescript-eslint/no-unused-vars
+  112:9   warning  'lockedBadges' is assigned a value but never used                @typescript-eslint/no-unused-vars
+  238:21  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  238:34  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\Coding\asrapgabut\asrapgym\src\app\schedule\page.tsx
+  37:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Coding\asrapgabut\asrapgym\src\app\schedule\page.tsx:37:5
+  35 |
+  36 |   useEffect(() => {
+> 37 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  38 |     // Load completed exercises from localStorage
+  39 |     const loadCompleted = () => {
+  40 |       const completed = new Set<string>();  react-hooks/set-state-in-effect
+
+D:\Coding\asrapgabut\asrapgym\src\components\AchievementNotification.tsx
+   31:9  error    Error: Cannot access variable before it is declared
+
+`handleClose` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+D:\Coding\asrapgabut\asrapgym\src\components\AchievementNotification.tsx:31:9
+  29 |       // Auto-close after 5 seconds
+  30 |       const timer = setTimeout(() => {
+> 31 |         handleClose();
+     |         ^^^^^^^^^^^ `handleClose` accessed before it is declared
+  32 |       }, 5000);
+  33 |
+  34 |       return () => clearTimeout(timer);
+
+D:\Coding\asrapgabut\asrapgym\src\components\AchievementNotification.tsx:38:3
+  36 |   }, [badge]);
+  37 |
+> 38 |   const handleClose = useCallback(() => {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 39 |     setIsExiting(true);
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+> 40 |     setTimeout(() => {
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+> 41 |       setIsVisible(false);
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |       onClose();
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |     }, 300);
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+> 44 |   }, [onClose]);
+     | ^^^^^^^^^^^^^^^^^ `handleClose` is declared here
+  45 |
+  46 |   if (!badge || !isVisible) return null;
+  47 |  react-hooks/immutability
+   36:6  warning  React Hook useEffect has a missing dependency: 'handleClose'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         react-hooks/exhaustive-deps
+  124:7  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Coding\asrapgabut\asrapgym\src\components\AchievementNotification.tsx:124:7
+  122 |   useEffect(() => {
+  123 |     if (!unlockedBadge && pendingBadges.length > 0) {
+> 124 |       showNextBadge();
+      |       ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  125 |     }
+  126 |   }, [unlockedBadge, pendingBadges, showNextBadge]);
+  127 |                                                                                                                           react-hooks/set-state-in-effect
+
+D:\Coding\asrapgabut\asrapgym\src\components\RestTimerModal.tsx
+  33:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Coding\asrapgabut\asrapgym\src\components\RestTimerModal.tsx:33:7
+  31 |   useEffect(() => {
+  32 |     if (isOpen) {
+> 33 |       setCurrentSet(1);
+     |       ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  34 |       setTimeRemaining(restTimeSeconds);
+  35 |       setIsPaused(false);
+  36 |       setIsResting(false);  react-hooks/set-state-in-effect
+
+D:\Coding\asrapgabut\asrapgym\src\components\VideoTutorialModal.tsx
+  3:10  warning  'useState' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\Coding\asrapgabut\asrapgym\src\contexts\LanguageContext.tsx
+  281:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Coding\asrapgabut\asrapgym\src\contexts\LanguageContext.tsx:281:5
+  279 |
+  280 |   useEffect(() => {
+> 281 |     setMounted(true);
+      |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  282 |     const saved = localStorage.getItem("asrapgym_language") as Language;
+  283 |     if (saved && (saved === "id" || saved === "en")) {
+  284 |       setLanguageState(saved);  react-hooks/set-state-in-effect
+
+D:\Coding\asrapgabut\asrapgym\src\contexts\ThemeContext.tsx
+  27:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Coding\asrapgabut\asrapgym\src\contexts\ThemeContext.tsx:27:5
+  25 |
+  26 |   useEffect(() => {
+> 27 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  28 |     const savedTheme = getTheme();
+  29 |     setThemeState(savedTheme);
+  30 |     document.documentElement.classList.toggle("light", savedTheme === "light");  react-hooks/set-state-in-effect
+
+Γ£û 27 problems (13 errors, 14 warnings)
+
