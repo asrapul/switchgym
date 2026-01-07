@@ -52,8 +52,8 @@ export default function LoadingScreen({ minDuration = 2500 }: LoadingScreenProps
         className="text-3xl font-bold tracking-wider mb-4 animate-fade-in-up"
         style={{ animationDelay: "0.2s" }}
       >
-        <span className="text-[#FAFAFA]">ASRAP</span>
-        <span className="text-[#DC2626]">GYM</span>
+        <span className="text-[#FAFAFA]">Switch</span>
+        <span className="text-[#DC2626]">Gym</span>
       </h1>
 
       {/* Tagline */}

@@ -110,10 +110,16 @@ export default function Home() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 glass-effect">
         <div className="max-w-lg mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-xl font-bold">
-            <span className="text-[#FAFAFA]">ASRAP</span>
-            <span className="text-[#DC2626]">GYM</span>
-          </h1>
+          <div className="flex items-center gap-2">
+            <img src="/switchgym_logo.svg" alt="Switch Gym" className="h-8 w-8" />
+            <div>
+              <h1 className="text-xl font-bold leading-tight">
+                <span className="text-[#FAFAFA]">Switch</span>
+                <span className="text-[#DC2626]">Gym</span>
+              </h1>
+              <p className="text-[9px] text-[#A3A3A3] -mt-0.5">by Asrap</p>
+            </div>
+          </div>
           <div className="flex items-center gap-2">
             {/* Theme Toggle */}
             <button 

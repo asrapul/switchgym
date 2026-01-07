@@ -15,9 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AsrapGym - Personal Workout Manager",
-  description: "Manage your gym workout exercises with AsrapGym - Your personal fitness companion",
+  title: "Switch Gym",
+  description: "Switch Gym - Your personal fitness companion",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  icons: {
+    icon: "/switchgym_logo.svg",
+    apple: "/switchgym_logo.svg",
+  },
 };
 
 export default function RootLayout({
