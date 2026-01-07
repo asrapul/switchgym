@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SwitchGym 🏋️
 
-## Getting Started
+A modern, mobile-first personal workout manager built with Next.js. Track your workouts, personal records, achievements, and body measurements.
 
-First, run the development server:
+![Switch Gym](./switchgym_logo.svg)
+
+**by Asrap**
+
+---
+
+## ✨ Features
+
+### 🏠 Dashboard
+- Monthly workout statistics
+- Water intake tracker (resets daily)
+- Training mode selector (Strength/Hypertrophy/Endurance)
+- Daily quest system
+- Hourly motivational quotes
+
+### 📅 Workout Schedule
+- Weekly workout plan (Upper/Lower body split)
+- Exercise tracking with sets/reps
+- Rest timer with audio cues
+- Video tutorials for each exercise (YouTube embed)
+- Swim day tracking
+
+### 🏆 Achievements
+- **55 achievement badges** across 4 difficulty levels
+- Sound notification on unlock
+- Categories: Workouts, Streaks, PRs, Swimming, Time-based, Body parts
+
+### 📊 Progress Tracking
+- Workout history calendar
+- Personal Records (PR) tracking with CRUD
+- Body measurements tracking
+- Streak counter
+
+### ⚙️ Settings
+- **Language switcher** (Indonesian 🇮🇩 / English 🇺🇸)
+- **Reset all data** with confirmation
+- Light/Dark theme toggle
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **State**: React Hooks + localStorage
+- **Deployment**: Vercel-ready
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/switchgym.git
+
+# Navigate to project
+cd switchgym
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/                  # Next.js App Router pages
+│   ├── page.tsx         # Homepage
+│   ├── schedule/        # Workout schedule
+│   ├── progress/        # Progress & achievements
+│   ├── pr/              # Personal records
+│   └── measurements/    # Body measurements
+├── components/          # Reusable components
+│   ├── BottomNav.tsx
+│   ├── RestTimerModal.tsx
+│   ├── VideoTutorialModal.tsx
+│   ├── SettingsModal.tsx
+│   └── AchievementNotification.tsx
+├── contexts/            # React contexts
+│   ├── ThemeContext.tsx
+│   └── LanguageContext.tsx
+├── data/                # Static data
+│   ├── schedule.ts      # Workout plan
+│   ├── timer.ts         # Training modes
+│   └── quotes.ts        # Motivational quotes
+└── lib/                 # Utilities
+    └── storage.ts       # localStorage handlers
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🌐 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel (Recommended)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push to GitHub
+2. Connect repository to Vercel
+3. Deploy automatically
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 👨‍💻 Author
+
+**Asrap** - Creator & Developer
+
+---
+
+Made with ❤️ and 💪
